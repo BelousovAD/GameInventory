@@ -1,4 +1,4 @@
-namespace GameInventory.Feature.Model
+namespace GameInventory.Features.Model
 {
     using System.IO;
     using UnityEngine;
