@@ -1,6 +1,5 @@
 namespace GameInventory.Features.Model
 {
-    using System;
     using UnityEngine;
 
     /// <summary>
