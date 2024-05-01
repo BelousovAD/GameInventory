@@ -5,7 +5,7 @@ namespace GameInventory.Features.Model
     /// <summary>
     /// Информация об инвентаре, который хранит предметы в ячейках.
     /// </summary>
-    [CreateAssetMenu(fileName = "CellsInventoryInfo", menuName = "GameInventory/Features/Model")]
+    [CreateAssetMenu(fileName = "CellsInventoryInfo", menuName = "GameInventory/Features/Model/CellsInventoryInfo")]
     public class CellsInventoryInfo : BaseInventoryInfo<InventoryItemInCellsInfo>
     {
         [SerializeField]

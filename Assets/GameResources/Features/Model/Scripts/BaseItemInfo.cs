@@ -5,7 +5,7 @@ namespace GameInventory.Features.Model
     /// <summary>
     /// Базовый класс информации о предмете.
     /// </summary>
-    [CreateAssetMenu(fileName = "BaseItemInfo", menuName = "GameInventory/Features/Model")]
+    [CreateAssetMenu(fileName = "BaseItemInfo", menuName = "GameInventory/Features/Model/BaseItemInfo")]
     public class BaseItemInfo : ScriptableObject
     {
         [SerializeField]
