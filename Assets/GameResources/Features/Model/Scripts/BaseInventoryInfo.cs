@@ -10,5 +10,11 @@ namespace GameInventory.Features.Model
     {
         [SerializeField]
         protected List<TInventoryItemInfo> _inventoryItems = new List<TInventoryItemInfo>();
+
+        /// <summary>
+        /// Возвращает информацию о предметах в инвентаре.
+        /// </summary>
+        /// <returns>Массив информации о предметах.</returns>
+        public TInventoryItemInfo[] GetInventoryItems() => _inventoryItems.ToArray();
     }
 }

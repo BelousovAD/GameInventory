@@ -3,6 +3,9 @@ namespace GameInventory.Features.View
     using GameInventory.Features.Model;
     using UnityEngine;
 
+    /// <summary>
+    /// Компонент отображения предмета, который хранится в ячейках.
+    /// </summary>
     [RequireComponent(typeof(RectTransform))]
     public class ItemInCellsView : MonoBehaviour
     {
