@@ -1,7 +1,6 @@
 namespace GameInventory.Features.Model
 {
-    using System.Collections.Generic;
-    using System.Drawing;
+    using System;
     using UnityEngine;
 
     /// <summary>
@@ -27,6 +26,19 @@ namespace GameInventory.Features.Model
         /// </summary>
         public void OnValidate() => _grid = new bool[_size.x, _size.y];
 
+        private CellsInventoryInfo _secondInventory = null;
+
+        /// <summary>
+        /// Устанавливает ссылку на инвентарь, с которым производится обмен предметами.
+        /// </summary>
+        /// <param name="secondInventory">Инвентарь, с которым производится обмен предметами.</param>
+        public void EnterTransferMenu(CellsInventoryInfo secondInventory) => _secondInventory = secondInventory;
+
+        /// <summary>
+        /// Удаляет ссылку на инвентарь, с которым производится обмен предметами.
+        /// </summary>
+        public void ExitTransferMenu() => _secondInventory = null;
+
         /// <summary>
         /// Добавляет предмет в инвентарь.
         /// </summary>
@@ -36,16 +48,9 @@ namespace GameInventory.Features.Model
         {
             if (CanAddItem(newPivot, inventoryItem.GetInfo().GetSizeInInventory()))
             {
-                InventoryItemInCellsInfo existingItem = FindItem(inventoryItem);
+                _secondInventory.RemoveItem(inventoryItem);
 
-                if (existingItem != null)
-                {
-                    existingItem.Pivot = newPivot;
-                }
-                else
-                {
-                    _inventoryItems.Add(new InventoryItemInCellsInfo(inventoryItem.GetInfo(), newPivot));
-                }
+                _inventoryItems.Add(new InventoryItemInCellsInfo(inventoryItem.GetInfo(), newPivot));
 
                 UpdateGrid(newPivot, inventoryItem.GetInfo().GetSizeInInventory(), true);
             }
